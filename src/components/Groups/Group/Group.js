@@ -5,7 +5,7 @@ import GroupIcon from '@material-ui/icons/Group';
 
 import useStyles from './styles';
 
-const Group = ({ group }) => {
+const Group = ({ group,setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -16,15 +16,17 @@ const Group = ({ group }) => {
       <div className={classes.overlay}>
         <Typography variant="h6">{group.name}</Typography>
       </div>
-      {/* <div className={classes.details}>
-        <Typography variant="body2" color="textSecondary" component="h2">{post.users.map((tag) => `#${tag} `)}</Typography>
-      </div> */}
+      <div className={classes.overlay2}>
+        <Button onClick={() => setCurrentId(group._id)} style={{ color: 'white' }} size="small">
+          <MoreHorizIcon fontSize="default" />
+        </Button>
+      </div>
       <Typography className={classes.title} gutterBottom variant="h5" component="h2">{group.name}</Typography>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">{group.desp}</Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" disabled={!user?.result} onClick={() => dispatch(likePost(post._id))}>
+        <Button size="small" color="primary" disabled={!user?.result} onClick={() => dispatch(group._id)}>
           <GroupIcon fontSize="small" /> See Posts
         </Button>
       </CardActions>

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Group from './Group/Group';
 import useStyles from './styles';
 
-const Groups = () => {
+const Groups = ( {setCurrentId }) => {
   const groups = useSelector((state) => state.groups);
   const classes = useStyles();
  
@@ -13,7 +13,7 @@ const Groups = () => {
       <Grid className={classes.container} container alignItems="stretch" spacing={3}>
         {groups.map((group) => (
           <Grid key={group._id} item xs={12} sm={6} md={6}>
-            <Group group={group} />
+            <Group group={group} setCurrentId={setCurrentId} />
           </Grid>
         ))}
       </Grid>
