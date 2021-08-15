@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grow, Grid } from '@material-ui/core';
 import Groups from '../../components/Groups/Groups'
 import { getGroups } from '../../Redux/Actions/Groups';
+import { useDispatch } from 'react-redux';
 
-import Groups from '../Groups/Groups';
-import Form from '../Form/SuperForm';
+// import Form from '../Form/SuperForm';
 
 const Home = () => {
   const [currentId, setCurrentId] = useState(0);
@@ -21,9 +21,9 @@ const Home = () => {
           <Grid item xs={12} sm={7}>
             <Groups setCurrentId={setCurrentId} />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          {/* <Grid item xs={12} sm={4}>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
-          </Grid>
+          </Grid> */}
 
         </Grid>
       </Container>

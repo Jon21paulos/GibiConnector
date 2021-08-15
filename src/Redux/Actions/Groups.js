@@ -1,5 +1,5 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
-import * as api from '../api/index.js';
+import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../../constants/actionTypes';
+import * as api from '../../api/index';
 
 export const getGroups = () => async (dispatch) => {
   try {
@@ -32,7 +32,7 @@ export const updateGroups = (id, group) => async (dispatch) => {
 };
 
 
-export const deleteGroup = (id) => async (dispatch) => {
+export const deleteGroups = (id) => async (dispatch) => {
   try {
     await await api.deleteGroups(id);
 
